@@ -1,0 +1,98 @@
+:root {
+  --primary: #2F6D80;
+  --primary-light: #77e4e1;
+  --secondary-main: #F79489;
+  --secondary-light: #F8AFA6;
+  --gray-light: #B1B1B1;
+}
+
+@font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../font/YekanBakh-Bold.eot');
+    src: url('../font/YekanBakh-Bold.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Bold.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Bold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../font/YekanBakh-Thin.eot');
+    src: url('../font/YekanBakh-Thin.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Thin.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Thin.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/YekanBakh-Regular.eot');
+    src: url('../font/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/YekanBakh-Regular.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/YekanBakh-Regular.ttf') format('truetype');
+  }
+  
+  /* Latin fonts (Roboto) */
+  @font-face {
+    font-family: IRANYekanEn;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../font/en/YekanBakh-Bold.eot');
+    src: url('../font/en/YekanBakh-Bold.eot?#iefix') format('embedded-opentype'),
+      /* IE6-8 */ url('../font/en/YekanBakh-Bold.woff2') format('woff2'),
+      /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Bold.woff') format('woff'),
+      /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Bold.ttf') format('truetype');
+  }
+  
+@font-face {
+font-family: IRANYekanEn;
+font-style: normal;
+font-weight: 300;
+src: url('../font/en/YekanBakh-Thin.eot');
+src: url('../font/en/YekanBakh-Thin.eot?#iefix') format('embedded-opentype'),
+    /* IE6-8 */ url('../font/en/YekanBakh-Thin.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Thin.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Thin.ttf') format('truetype');
+}
+
+@font-face {
+font-family: IRANYekanEn;
+font-style: normal;
+font-weight: normal;
+src: url('../font/en/YekanBakh-Regular.eot');
+src: url('../font/en/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-8 */ url('../font/en/YekanBakh-Regular.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../font/en/YekanBakh-Regular.woff') format('woff'),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../font/en/YekanBakh-Regular.ttf') format('truetype');
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f8f9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5092a6;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* header */
+a{
+  text-decoration: none;
+  color: inherit;
+}

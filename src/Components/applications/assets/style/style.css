@@ -1,0 +1,32 @@
+.application-root-header-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px !important;
+}
+
+.fleid-box{
+    margin-top: 16px;
+}
+
+.sticky-table-cell{
+    left: 0px;
+    z-index: 1101;
+    position: sticky;
+    visibility: visible;
+    overflow-wrap: break-word;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(255, 255, 255);
+    border-right: 1px solid rgb(224, 224, 224);
+    min-width: 150px;
+}
+.head-cell{
+    z-index: 1102 !important;
+    border-right: none;
+}
