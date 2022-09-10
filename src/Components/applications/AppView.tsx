@@ -70,7 +70,7 @@ const AppView = () => {
                 name: name,
                 id: appId!
             })
-            await getAppHook.refetch()
+            // await getAppHook.refetch();
             if(onForkEnv !== -1){
                 const index = getAppHook?.data?.environments?.findIndex(object => {
                     return object.id === onForkEnv;
@@ -83,8 +83,9 @@ const AppView = () => {
                     values.push(getEnviromentParametersHook[index!].data[key]);
                     globals.push(false);
                 })
-                // console.log(getAppHook?.data?.environments);
-                await onParamCreate(keys, values, globals, appId!, createEnviromentHook.data?.result.id!+1);
+                let id =(await getAppHook.refetch()).data?.environments!.at(-1)?.id;
+                console.log(id)
+                onParamCreate(keys, values, globals, appId!, id!);
                 setOnForkEnv(-1);
             }
         }
