@@ -3,11 +3,13 @@ import IApplication from 'interfaces/Application';
 import DeleteDialog from './DeleteDialog';
 import {useNavigate} from 'react-router-dom';
 import {toLocalDate, getDateTooltip} from '../sharedComponents/Utils';
+import { tableTheme } from './assets/style/tableTheme';
 
 import {Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Grid, IconButton} from '@mui/material';
 import {Tooltip} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { ThemeProvider} from '@mui/material/styles';
 
 type props = {
     applications: IApplication[],
@@ -48,16 +50,17 @@ const ApplicationTable = ({applications, onAppDelete}:props) =>{
     return (
     <Grid container justifyContent='center'>
         <Grid item md={12}>
-        <TableContainer>
+        <ThemeProvider theme={tableTheme}>
+        <TableContainer sx={{direction: 'ltr'}}>
             <Table aria-label="application table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align='right'>نام</TableCell>
-                        <TableCell align='right'>شناسه</TableCell>
-                        <TableCell align='right'>مشخصات</TableCell>
-                        <TableCell align='right'>تاریخ ایجاد</TableCell>
-                        <TableCell align='right'>آخرین بروزرسانی</TableCell>
-                        <TableCell align='right'>عمليات</TableCell>
+                        <TableCell align='left'>name</TableCell>
+                        <TableCell align='left'>id</TableCell>
+                        <TableCell align='left'>description</TableCell>
+                        <TableCell align='left'>created</TableCell>
+                        <TableCell align='left'>updated</TableCell>
+                        <TableCell align='left'>operation</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -66,24 +69,25 @@ const ApplicationTable = ({applications, onAppDelete}:props) =>{
                         ?.map((app) => {
                             return (
                             <TableRow
+                            className='app_table_row'
                             key={app?.id}
                             hover>  
-                                <TableCell align='right' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
+                                <TableCell align='left' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
                                     {app?.name}
                                 </TableCell>
-                                <TableCell align='right' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
+                                <TableCell align='left' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
                                     {app?.id}
                                 </TableCell>
-                                <TableCell align='right' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
+                                <TableCell align='left' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
                                     {app?.description}...
                                 </TableCell>
                                 <Tooltip title={getDateTooltip(app?.created)}>
-                                    <TableCell align='right' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
+                                    <TableCell align='left' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
                                         {toLocalDate(app?.created).toString()}
                                     </TableCell>
                                 </Tooltip>
                                 <Tooltip title={getDateTooltip(app?.updated)}>
-                                    <TableCell align='right' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
+                                    <TableCell align='left' onClick={()=>navigate(`../applications/${app.id}`, { replace: true })}>
                                         {toLocalDate(app?.updated).toString()}
                                     </TableCell>
                                 </Tooltip>
@@ -93,7 +97,7 @@ const ApplicationTable = ({applications, onAppDelete}:props) =>{
                                             <DeleteIcon fontSize='small'/>
                                         </IconButton>
                                         <IconButton>
-                                            <MoreVertIcon fontSize='small'/>
+                                            <MoreVertIcon fontSize='small' color='disabled'/>
                                         </IconButton>
                                     </Box>
                                 </TableCell>
@@ -103,6 +107,7 @@ const ApplicationTable = ({applications, onAppDelete}:props) =>{
                 </TableBody>
             </Table>
         </TableContainer>
+        </ThemeProvider>
         <Box sx={{display: 'flex', alignItems: 'center'}} color='text.secondary'>
             <TablePagination
                 rowsPerPageOptions={[5]}
