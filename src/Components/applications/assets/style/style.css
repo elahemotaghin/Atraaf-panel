@@ -8,6 +8,10 @@
     margin-top: 16px;
 }
 
+.app_table_row{
+    cursor: pointer;
+}
+
 .sticky-table-cell{
     left: 0px;
     z-index: 1101;

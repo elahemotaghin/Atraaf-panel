@@ -22,7 +22,7 @@ export const tableTheme = createTheme({
                     },
                     maxWidth: '150px',
                     maxHeight: '50px',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
                 },
                 head:{
                     fontWeight: 700,

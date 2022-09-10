@@ -16,7 +16,7 @@ import {tableTheme} from './assets/style/tableTheme';
 import ParamTableHeaderCell from './ParamTableHeaderCell';
 
 //import material components
-import {Box, Typography, Button, Menu, MenuItem, IconButton, Tooltip, TextField} from '@mui/material';
+import {Box, Typography, Button, IconButton, Tooltip, TextField} from '@mui/material';
 import {TableContainer, Table, TableHead, TableBody, TableRow, TableCell, TablePagination, Grid} from '@mui/material';
 import {Add} from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -72,10 +72,9 @@ const AppView = () => {
             })
             await getAppHook.refetch()
             if(onForkEnv !== -1){
-                console.log('fork');
                 const index = getAppHook?.data?.environments?.findIndex(object => {
                     return object.id === onForkEnv;
-                  });
+                });
                 let keys: string[] = [];
                 let values: string[] = [];
                 let globals: boolean[] = [];
@@ -84,7 +83,8 @@ const AppView = () => {
                     values.push(getEnviromentParametersHook[index!].data[key]);
                     globals.push(false);
                 })
-                onParamCreate(keys, values, globals, appId!, createEnviromentHook.data?.result.id!+1)
+                // console.log(getAppHook?.data?.environments);
+                await onParamCreate(keys, values, globals, appId!, createEnviromentHook.data?.result.id!+1);
                 setOnForkEnv(-1);
             }
         }
